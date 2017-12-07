@@ -1,6 +1,6 @@
 <?xml version="1.0" encoding="utf-8"?>
 <Project DefaultTargets="Build" xmlns="http://schemas.microsoft.com/developer/msbuild/2003">
-  <Import Project="$(MSBuildExtensionsPath)\$(MSBuildToolsVersion)\Microsoft.Common.props" Condition="Exists('$(MSBuildExtensionsPath)\$(MSBuildToolsVersion)\Microsoft.Common.props')" />
+  <Import Project="$(MSBuildExtensionsPath)\$(MSBuildToolsVersion)\Microsoft.Common.props" Condition="Exists('$(MSBuildExtensionsPath)\$(MSBuildToolsVersion)\Microsoft.Common.props') and '$(MicrosoftCommonPropsHasBeenImported)' != 'true'" />
 
   <PropertyGroup>
     <Configuration Condition=" '$(Configuration)' == '' ">Debug</Configuration>
@@ -8,7 +8,7 @@
 
     <OutputPath Condition="'$(OutputPath)'==''">bin\$(Configuration)\</OutputPath>
   </PropertyGroup>
-  
+
   <PropertyGroup>
     <NoPackageAnalysis Condition=" '$(NoPackageAnalysis)' == '' ">False</NoPackageAnalysis>
     <NoDefaultExcludes Condition=" '$(NoDefaultExcludes)' == '' ">True</NoDefaultExcludes>
@@ -17,7 +17,7 @@
     <RequireLicenseAcceptance Condition=" '$(RequireLicenseAcceptance)' == '' ">False</RequireLicenseAcceptance>
     <DevelopmentDependency Condition=" '$(DevelopmentDependency)' == '' ">False</DevelopmentDependency>
   </PropertyGroup>
-  
+
   <PropertyGroup>
     <NuProjTasksPath Condition=" '$(NuProjTasksPath)' == '' ">$(MSBuildThisFileDirectory)NuProj.Tasks.dll</NuProjTasksPath>
     <NuProjToolPath Condition=" '$(NuProjToolPath)' == '' ">$(MSBuildThisFileDirectory)</NuProjToolPath>
